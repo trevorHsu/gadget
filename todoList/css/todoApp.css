@@ -1,0 +1,208 @@
+*{margin: 0; padding: 0;}
+body{
+    background: #F7F7F7;
+    min-width: 625px;
+    }
+li{list-style: none;}
+
+/*todo app*/
+#todo{
+    width: 520px;
+    margin: 50px auto 350px;
+    padding: 10px;
+    border: 1px solid #7E7E7E;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px 1px rgb(126,126,126);
+    background: #fff;
+    /*transition: .3s;*/
+}
+.done{
+    text-decoration: line-through;
+    color: #AFAFAF;
+}
+#todo .count-todo1{color: #5D98DB;}
+#todo .count-todo2{color: #F06A6A;}
+#todo-box{
+    width: 100%;
+    background: #f7f7f7;
+    margin: 8px 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+#todo-box .del-item{
+    float: right;
+    margin-right: 4%;
+    cursor: pointer;
+    display: none;
+    color: #F06A6A;
+}
+#todo-box li{
+    height: 30px;
+    border-bottom: 1px dashed #B9B9B9;
+    text-indent: 10px;
+    color: #6A6A6A;
+    transition: .2s;
+}
+#todo-box li:hover{
+    color: #1A1A1A;
+    background: #EDEDED;
+}
+#todo-box li label{
+    cursor: pointer;
+    line-height: 30px;
+}
+#todo-box li:hover .del-item{
+    display: block;
+}
+#input-area input{
+    height: 30px;
+}
+#input-area #todo-text{
+    width: 57%;
+    text-indent: 10px;
+    transition: .3s outline;
+    border: 1px dashed #9B9B9B;
+    outline: 1px solid rgba(0,0,0,0);
+}
+#input-area #todo-text:hover{
+    outline: 1px solid #DBDBDB;
+}
+#input-area #todo-text:focus{
+    outline: 1px solid #DBDBDB;
+}
+#input-area input[type="button"]{
+    width: 20%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background: #6AA7EA;
+    color: #fff;
+    transition: .2s;
+    outline: none;
+}
+#input-area input[type="button"]:hover{
+    background: #5D98DB;
+}
+
+/*file*/
+#file-box{
+    position: fixed;
+    right: 2%;
+    top: 3%;
+    width: 60px;
+    height: 50px;
+    /*background: red;*/
+    transition: .4s;
+    text-align: center;
+}
+#file-box:hover{
+    height: 200px;
+}
+#file-box li{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    transition: .4s;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgba(193,193,193,0.7);
+}
+#file-box .export-file{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:150%;
+    cursor: pointer;
+}
+#file-box li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#file-box li:nth-child(1){
+    z-index: 1;
+    background: url('../img/btn/file.png') 8px 6px no-repeat;
+    background-size: 36px 36px;
+    background-color: #6AA7EA; 
+    cursor: default;
+}
+/*#file-box li:nth-child(1):hover{
+    background-color: #649DDB !important;
+       
+}*/
+#file-box li:nth-child(2):hover{
+    background-color: #03AF7E !important;   
+}
+#file-box li:nth-child(3):hover{
+    background-color: #EDA5A7 !important;   
+}
+#file-box li:nth-child(2){
+    background: url('../img/btn/import.png') 10px 10px no-repeat;
+    background-size: 30px 30px;
+    background-color: #00BE8B;
+}
+#file-box li:nth-child(3){
+    background: url('../img/btn/export.png') 10px 10px no-repeat;
+    background-size: 30px 30px;
+    background-color: #F3B0B1;
+}
+#file-box:hover li:nth-child(1){
+    transform: rotate(180deg);
+}
+#file-box:hover li:nth-child(2){
+    transform: translateY(80px);
+}
+#file-box:hover li:nth-child(3){
+    transform: translateY(150px);
+}
+
+
+
+/*background*/
+#bg{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: #5D98DB;
+    z-index: -1;
+    color: #fff;
+}
+#bg .bg-img{
+    width: 100%;
+}
+#bg .nav-btn{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: .3s;
+}
+#bg:hover .nav-btn{
+    opacity: 1;
+}
+#bg .nav-btn p{
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+}
+#bg .nav-btn .prev{left: 20px;}
+#bg .nav-btn .next{right: 20px;}
+#bg .lock{
+    z-index: 1;
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    text-align: center;
+}
