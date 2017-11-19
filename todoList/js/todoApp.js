@@ -188,8 +188,8 @@ function generDate(){
         hour: time.getHours()<10 ? '0'+time.getHours() : time.getHours(),
         minute: time.getMinutes()<10 ? '0'+time.getMinutes() : time.getMinutes(),
         second: time.getSeconds()<10 ? '0'+time.getSeconds() : time.getSeconds(),
-        day: time.getDay() - 1
+        day: time.getDay()
     }
-    let week = ['Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.', 'Sun.'];
+    let week = ['Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.'];
     return `${o.year}年${o.month}月${o.date}日  ${o.hour}:${o.minute}:${o.second}  ${week[o.day]}`;
 }

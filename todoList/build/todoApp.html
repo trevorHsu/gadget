@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="shortcut icon" href="./fav.ico"/>
+    <link rel="stylesheet" href="./css/todoApp.css"/>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <!--todo list-->
+    <div id="todo">
+        <p>共有<b class="count-todo1"> {{todoList.length}} </b>件待办事项，还有<b class="count-todo2"> {{getCount()}} </b>件未完成</p>
+        <ul id="todo-box">
+            <li v-for="item in todoList" v-on:click="delItem">
+                <label v-bind:for="item.id">
+                    <input v-model="item.status" type="checkbox" v-bind:id="item.id"/>
+                    <span v-bind:class="{done: item.status}">{{item.todo}}</span>
+                </label>
+                <p class="del-item">x</p>
+            </li>
+        </ul>
+        <div id="input-area">
+            <input type="text" id="todo-text" autofocus placeholder="请输入待办事项" v-on:keyup="addTodoByKey"/>
+            <input type="button" value="添加待办" v-on:click="addTodo"/>
+            <input type="button" value="清除已完成" v-on:click="xDone"/>
+        </div>
+    </div>
+    <!--file-->
+    <ul id="file-box">
+        <li class="cover"></li>
+        <li><input title="导入文件" class="export-file" v-on:change="importFile" title="导入文件" type="file" accept="text/*"/></li>
+        <li><a v-on:click="generFile" class="generate-file" title="生成文件"></a></li>      
+    </ul>
+    <!--background-->
+    <div id="bg">
+        <img class="bg-img" v-bind:src="imgUrl"/>
+        <div class="nav-btn">
+            <p class="prev" v-on:click="prevImg"> < </p>
+            <p class="next" v-on:click="nextImg"> > </p>
+        </div>
+        <p class="lock">当前时间为：{{clock}}{{timeInfo}}</P>
+    </div>
+
+<script src="./js/todoApp.js"></script>
+</body>
+</html>
